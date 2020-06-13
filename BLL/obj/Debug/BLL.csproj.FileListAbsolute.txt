@@ -1,0 +1,7 @@
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\BLL\bin\Debug\BLL.dll.config
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\BLL\bin\Debug\BLL.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\BLL\bin\Debug\BLL.pdb
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\BLL\obj\Debug\BLL.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\BLL\obj\Debug\BLL.pdb

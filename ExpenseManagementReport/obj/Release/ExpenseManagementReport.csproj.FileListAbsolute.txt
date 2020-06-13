@@ -1,0 +1,9 @@
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.csprojAssemblyReference.cache
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.frmDelete.resources
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.frm_Login.resources
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.frmLoadingCover.resources
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.frmMainMenu.resources
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.frmNewReport.resources
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.Properties.Resources.resources
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.csproj.GenerateResource.cache
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Release\ExpenseManagementReport.csproj.CoreCompileInputs.cache

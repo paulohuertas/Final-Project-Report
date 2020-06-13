@@ -1,0 +1,11 @@
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\bin\Debug\DAL.dll.config
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\bin\Debug\DAL.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\bin\Debug\DAL.pdb
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\bin\Debug\BAL.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\bin\Debug\BAL.pdb
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\bin\Debug\BAL.dll.config
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\obj\Debug\DAL.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\obj\Debug\DAL.pdb

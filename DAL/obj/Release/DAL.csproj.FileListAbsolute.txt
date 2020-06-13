@@ -1,0 +1,2 @@
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\DAL\obj\Release\DAL.csprojAssemblyReference.cache
