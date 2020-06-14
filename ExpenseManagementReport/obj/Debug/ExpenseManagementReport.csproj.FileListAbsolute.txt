@@ -1,7 +1,6 @@
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.frm_Login.resources
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.frmLoadingCover.resources
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.frmMainMenu.resources
-C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.frmNewReport.resources
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.Properties.Resources.resources
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.csproj.GenerateResource.cache
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.csproj.CoreCompileInputs.cache

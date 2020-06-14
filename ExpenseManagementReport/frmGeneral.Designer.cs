@@ -75,6 +75,7 @@
             this.txt_SearchDelete.Name = "txt_SearchDelete";
             this.txt_SearchDelete.Size = new System.Drawing.Size(283, 26);
             this.txt_SearchDelete.TabIndex = 0;
+            this.txt_SearchDelete.TextChanged += new System.EventHandler(this.txt_SearchDelete_TextChanged);
             // 
             // btn_Search
             // 
@@ -100,6 +101,7 @@
             this.btn_Refresh.Text = "Refresh";
             this.btn_Refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Refresh.UseVisualStyleBackColor = true;
+            this.btn_Refresh.Click += new System.EventHandler(this.btn_Refresh_Click);
             // 
             // cb_Category
             // 
@@ -251,6 +253,7 @@
             this.btn_Edit.Text = "Edit";
             this.btn_Edit.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
             // btn_Delete
             // 
@@ -264,6 +267,7 @@
             this.btn_Delete.Text = "Delete";
             this.btn_Delete.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // pictureBox1
             // 
@@ -292,8 +296,10 @@
             this.dg_ExpenseData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_ExpenseData.Location = new System.Drawing.Point(33, 40);
             this.dg_ExpenseData.Name = "dg_ExpenseData";
+            this.dg_ExpenseData.ReadOnly = true;
             this.dg_ExpenseData.Size = new System.Drawing.Size(675, 176);
             this.dg_ExpenseData.TabIndex = 17;
+            this.dg_ExpenseData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_ExpenseData_CellClick);
             // 
             // frmGeneral
             // 
@@ -321,7 +327,9 @@
             this.Controls.Add(this.txt_SearchDelete);
             this.Controls.Add(this.lbl_Search);
             this.Name = "frmGeneral";
-            this.Text = "Delete Expense";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "REPORT";
             this.Load += new System.EventHandler(this.frmGeneral_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenseManagementReportAppDataSet)).EndInit();

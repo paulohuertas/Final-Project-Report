@@ -19,6 +19,8 @@ namespace DAL
 
         public int AddNEwExpense(ExpenseReport expense)
         {
+            DataGridDAL dataGridDAL = new DataGridDAL();
+
             SqlCommand cmd = new SqlCommand("spAddNewReport", OpenConnection());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ActionType", "Save");
@@ -28,7 +30,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@ReceiptNo", expense.ReceiptNo);
             cmd.Parameters.AddWithValue("@ReceiptDate", expense.receiptDate);
             cmd.Parameters.AddWithValue("@Image", expense.Image);
-            cmd.Parameters.AddWithValue("@FK_UserId", getUserId());
+            cmd.Parameters.AddWithValue("@FK_UserId", dataGridDAL.getUserId());
 
             try
             {
@@ -44,16 +46,6 @@ namespace DAL
             {
                 CloseConnection();
             }
-        }
-
-        public int getUserId()
-        {
-            OpenConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT UserId FROM tb_User WHERE Username = '" + SessionManagement.Username + "' AND Password = '" + SessionManagement.Password + "'";
-            SessionManagement.UserId = (int) ExeScalar(cmd);
-            return SessionManagement.UserId;
         }
     }
 

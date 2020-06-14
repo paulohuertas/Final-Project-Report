@@ -13,7 +13,7 @@ namespace DAL
 {
     public class DataGridDAL : DbConnection
     {
-        public Object FetchAllExpensesRecords(ExpenseReport expense)
+        public object FetchAllExpensesRecords(ExpenseReport expense)
         {
             OpenConnection();
             SqlDataAdapter dataAdapter = new SqlDataAdapter();
@@ -23,6 +23,16 @@ namespace DAL
             dataAdapter.Fill(dataTable);
             BindingSource bSource = new BindingSource();
             return bSource.DataSource = dataTable;
+        }
+
+        public int getUserId()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT UserId FROM tb_User WHERE Username = '" + SessionManagement.Username + "' AND Password = '" + SessionManagement.Password + "'";
+            SessionManagement.UserId = (int)ExeScalar(cmd);
+            return SessionManagement.UserId;
         }
     }
 }

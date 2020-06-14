@@ -12,10 +12,13 @@ namespace DAL
     {
         public int DeleteExpense(int receiptNo)
         {
+            DataGridDAL dataGridDAL = new DataGridDAL();
+
             SqlCommand cmd = new SqlCommand("spDeleteExpense", OpenConnection());
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@ActionType", "Delete");
             cmd.Parameters.AddWithValue("@ReceiptNo", receiptNo);
+            cmd.Parameters.AddWithValue("@FK_UserId", dataGridDAL.getUserId());
             try
             {
                 OpenConnection();
