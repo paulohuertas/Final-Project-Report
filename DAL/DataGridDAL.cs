@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using BAL;
 using Model;
 
@@ -12,13 +13,16 @@ namespace DAL
 {
     public class DataGridDAL : DbConnection
     {
-        public DataTable FetchAllExpensesRecords(ExpenseReport expense)
+        public Object FetchAllExpensesRecords(ExpenseReport expense)
         {
             OpenConnection();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "SELECT ReportId, ExpName, ExpTotal, ExpCategory, ReceiptNo, ReceiptDate, Username FROM tb_Report LEFT JOIN tb_User ON UserId = ReportId WHERE Username = '" + SessionManagement.Username + "' AND Password = '" + SessionManagement.Password + "'";
-            return ExeReader(cmd);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter();
+            string sqlSelect = "SELECT ReportId, ExpName, ExpTotal, ExpCategory, ReceiptNo, ReceiptDate, Username FROM tb_Report LEFT JOIN tb_User ON UserId = FK_UserId WHERE Username = '" + SessionManagement.Username + "' AND Password = '" + SessionManagement.Password + "'";
+            dataAdapter.SelectCommand = new SqlCommand(sqlSelect, OpenConnection());
+            DataTable dataTable = new DataTable();
+            dataAdapter.Fill(dataTable);
+            BindingSource bSource = new BindingSource();
+            return bSource.DataSource = dataTable;
         }
     }
 }

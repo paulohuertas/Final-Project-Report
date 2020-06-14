@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace ExpenseManagementReport
     {
         DataGridDAL fetchData = new DataGridDAL();
         ExpenseReport expense = new ExpenseReport();
+        SqlDataAdapter dataAdapter;
         AddData add = new AddData();
          
 
@@ -25,8 +27,9 @@ namespace ExpenseManagementReport
         public frmGeneral()
         {
             InitializeComponent();
-            fetchData.FetchAllExpensesRecords(expense);
             dg_ExpenseData.Refresh();
+            dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
+            
         }
 
         private void btn_AttachFile_Click(object sender, EventArgs e)
@@ -41,17 +44,12 @@ namespace ExpenseManagementReport
 
         private void frmGeneral_Load(object sender, EventArgs e)
         {
-            DataTable dt = new DataTable();
+            /*DataTable dt = new DataTable();
             dt = fetchData.FetchAllExpensesRecords(expense);
-            dg_ExpenseData.DataSource = dt;
+            dg_ExpenseData.DataSource = dt;*/
 
-            int i = 0;
-            foreach (DataGridViewColumn dgvc in dg_ExpenseData.Columns)
-            {
-                i = i + dgvc.Width;
-            }
-            dg_ExpenseData.Width = i + dg_ExpenseData.RowHeadersWidth + 2;
-            dg_ExpenseData.Height = dg_ExpenseData.GetRowDisplayRectangle(dg_ExpenseData.NewRowIndex, true).Bottom + dg_ExpenseData.GetRowDisplayRectangle(dg_ExpenseData.NewRowIndex, false).Height;
+            dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
+            
         }
 
         private void btn_Send_Click(object sender, EventArgs e)
@@ -76,7 +74,11 @@ namespace ExpenseManagementReport
                 {
                     MessageBox.Show("Record added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     clearFields();
-                    this.InitializeComponent();
+                    
+                    dg_ExpenseData.Update();
+                    dg_ExpenseData.Refresh();
+                    dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
+
                 }
             }
         }

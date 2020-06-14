@@ -23,8 +23,7 @@ namespace DAL
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Username", SessionManagement.Username);
                 cmd.Parameters.AddWithValue("@Password", SessionManagement.Password);
-                //username
-                //password
+                
                 sdr = cmd.ExecuteReader();
                 if (sdr.Read())
                 {

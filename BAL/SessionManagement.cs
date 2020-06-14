@@ -8,7 +8,7 @@ namespace BAL
 {
     public static class SessionManagement
     {
-        //private static int _userId;
+        private static int _userId;
         private static string _username;
         private static string _password;
 
@@ -33,6 +33,18 @@ namespace BAL
             set
             {
                 SessionManagement._password = value;
+            }
+        }
+
+        public static int UserId
+        {
+            get
+            {
+                return SessionManagement._userId;
+            }
+            set
+            {
+                SessionManagement._userId = value;
             }
         }
     }

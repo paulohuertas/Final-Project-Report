@@ -9,7 +9,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Drawing;
 using Model;
-
+using BAL;
 
 namespace DAL
 {
@@ -28,6 +28,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@ReceiptNo", expense.ReceiptNo);
             cmd.Parameters.AddWithValue("@ReceiptDate", expense.receiptDate);
             cmd.Parameters.AddWithValue("@Image", expense.Image);
+            cmd.Parameters.AddWithValue("@FK_UserId", getUserId());
 
             try
             {
@@ -44,6 +45,18 @@ namespace DAL
                 CloseConnection();
             }
         }
+
+        public int getUserId()
+        {
+            OpenConnection();
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = "SELECT UserId FROM tb_User WHERE Username = '" + SessionManagement.Username + "' AND Password = '" + SessionManagement.Password + "'";
+            SessionManagement.UserId = (int) ExeScalar(cmd);
+            return SessionManagement.UserId;
+        }
     }
+
+    
 }
 
