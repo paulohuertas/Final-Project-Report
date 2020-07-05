@@ -21,3 +21,12 @@ C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementRe
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.exe
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.pdb
 C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.frmGeneral.resources
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\CsvHelper.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\System.ValueTuple.dll
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\CsvHelper.xml
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\bin\Debug\System.ValueTuple.xml
+C:\01. Paulo Huertas\DBS\2nd Year\Final Project\WindowsForms\ExpenseManagementReport\ExpenseManagementReport\obj\Debug\ExpenseManagementReport.exe.config

@@ -13,7 +13,7 @@ namespace Model
     {
         public int ReportId { get; set; }
         public string ExpName { get; set; }
-        public float ExpTotal { get; set; }
+        public double ExpTotal { get; set; }
         public string ExpCategory { get; set; }
         public int ReceiptNo { get; set; }
         public DateTime receiptDate { get; set; }

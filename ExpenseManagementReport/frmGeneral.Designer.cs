@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeneral));
             this.lbl_Search = new System.Windows.Forms.Label();
             this.txt_SearchDelete = new System.Windows.Forms.TextBox();
-            this.btn_Search = new System.Windows.Forms.Button();
+            this.btn_Home = new System.Windows.Forms.Button();
             this.btn_Refresh = new System.Windows.Forms.Button();
             this.cb_Category = new System.Windows.Forms.ComboBox();
             this.txt_ReceiptRefNo = new System.Windows.Forms.TextBox();
@@ -52,6 +52,7 @@
             this.expenseManagementReportAppDataSet = new ExpenseManagementReport.ExpenseManagementReportAppDataSet();
             this.expenseManagementReportAppDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dg_ExpenseData = new System.Windows.Forms.DataGridView();
+            this.btn_generateReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenseManagementReportAppDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.expenseManagementReportAppDataSetBindingSource)).BeginInit();
@@ -77,26 +78,27 @@
             this.txt_SearchDelete.TabIndex = 0;
             this.txt_SearchDelete.TextChanged += new System.EventHandler(this.txt_SearchDelete_TextChanged);
             // 
-            // btn_Search
+            // btn_Home
             // 
-            this.btn_Search.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btn_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_Search.Image")));
-            this.btn_Search.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Search.Location = new System.Drawing.Point(397, 8);
-            this.btn_Search.Name = "btn_Search";
-            this.btn_Search.Size = new System.Drawing.Size(75, 25);
-            this.btn_Search.TabIndex = 1;
-            this.btn_Search.Text = "Search";
-            this.btn_Search.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Search.UseVisualStyleBackColor = false;
+            this.btn_Home.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_Home.Image = ((System.Drawing.Image)(resources.GetObject("btn_Home.Image")));
+            this.btn_Home.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Home.Location = new System.Drawing.Point(623, 8);
+            this.btn_Home.Name = "btn_Home";
+            this.btn_Home.Size = new System.Drawing.Size(85, 25);
+            this.btn_Home.TabIndex = 1;
+            this.btn_Home.Text = "Home";
+            this.btn_Home.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Home.UseVisualStyleBackColor = false;
+            this.btn_Home.Click += new System.EventHandler(this.btn_Home_Click);
             // 
             // btn_Refresh
             // 
             this.btn_Refresh.Image = ((System.Drawing.Image)(resources.GetObject("btn_Refresh.Image")));
             this.btn_Refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Refresh.Location = new System.Drawing.Point(490, 8);
+            this.btn_Refresh.Location = new System.Drawing.Point(388, 8);
             this.btn_Refresh.Name = "btn_Refresh";
-            this.btn_Refresh.Size = new System.Drawing.Size(75, 25);
+            this.btn_Refresh.Size = new System.Drawing.Size(85, 25);
             this.btn_Refresh.TabIndex = 2;
             this.btn_Refresh.Text = "Refresh";
             this.btn_Refresh.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -146,7 +148,8 @@
             this.txt_TotalSpent.Name = "txt_TotalSpent";
             this.txt_TotalSpent.Size = new System.Drawing.Size(301, 26);
             this.txt_TotalSpent.TabIndex = 4;
-            this.txt_TotalSpent.Text = "€";
+            this.txt_TotalSpent.Text = "0.00";
+            this.txt_TotalSpent.TextChanged += new System.EventHandler(this.txt_TotalSpent_TextChanged);
             // 
             // txt_ExpenseName
             // 
@@ -293,13 +296,29 @@
             // dg_ExpenseData
             // 
             this.dg_ExpenseData.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dg_ExpenseData.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dg_ExpenseData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_ExpenseData.Location = new System.Drawing.Point(33, 40);
             this.dg_ExpenseData.Name = "dg_ExpenseData";
             this.dg_ExpenseData.ReadOnly = true;
+            this.dg_ExpenseData.RowTemplate.ReadOnly = true;
             this.dg_ExpenseData.Size = new System.Drawing.Size(675, 176);
             this.dg_ExpenseData.TabIndex = 17;
             this.dg_ExpenseData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_ExpenseData_CellClick);
+            // 
+            // btn_generateReport
+            // 
+            this.btn_generateReport.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.btn_generateReport.Image = ((System.Drawing.Image)(resources.GetObject("btn_generateReport.Image")));
+            this.btn_generateReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_generateReport.Location = new System.Drawing.Point(496, 9);
+            this.btn_generateReport.Name = "btn_generateReport";
+            this.btn_generateReport.Size = new System.Drawing.Size(121, 25);
+            this.btn_generateReport.TabIndex = 1;
+            this.btn_generateReport.Text = "Generate CSV";
+            this.btn_generateReport.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_generateReport.UseVisualStyleBackColor = false;
+            this.btn_generateReport.Click += new System.EventHandler(this.btn_generateReport_Click);
             // 
             // frmGeneral
             // 
@@ -323,7 +342,8 @@
             this.Controls.Add(this.lbl_Total);
             this.Controls.Add(this.lbl_ExpenseName);
             this.Controls.Add(this.btn_Refresh);
-            this.Controls.Add(this.btn_Search);
+            this.Controls.Add(this.btn_generateReport);
+            this.Controls.Add(this.btn_Home);
             this.Controls.Add(this.txt_SearchDelete);
             this.Controls.Add(this.lbl_Search);
             this.Name = "frmGeneral";
@@ -343,7 +363,7 @@
         #endregion
         private System.Windows.Forms.Label lbl_Search;
         private System.Windows.Forms.TextBox txt_SearchDelete;
-        private System.Windows.Forms.Button btn_Search;
+        private System.Windows.Forms.Button btn_Home;
         private System.Windows.Forms.Button btn_Refresh;
         private System.Windows.Forms.ComboBox cb_Category;
         private System.Windows.Forms.TextBox txt_ReceiptRefNo;
@@ -362,6 +382,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource expenseManagementReportAppDataSetBindingSource;
         private ExpenseManagementReportAppDataSet expenseManagementReportAppDataSet;
-        private System.Windows.Forms.DataGridView dg_ExpenseData;
+        private System.Windows.Forms.Button btn_generateReport;
+        public  System.Windows.Forms.DataGridView dg_ExpenseData;
     }
 }

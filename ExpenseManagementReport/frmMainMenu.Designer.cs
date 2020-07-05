@@ -36,7 +36,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsb_EditExpense = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsb_SearchExpense = new System.Windows.Forms.ToolStripButton();
+            this.tsb_EmailExpense = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsb_GenerateReport = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
@@ -51,7 +51,7 @@
             this.toolStripSeparator2,
             this.tsb_EditExpense,
             this.toolStripSeparator3,
-            this.tsb_SearchExpense,
+            this.tsb_EmailExpense,
             this.toolStripSeparator4,
             this.tsb_GenerateReport});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -108,15 +108,16 @@
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 100);
             // 
-            // tsb_SearchExpense
+            // tsb_EmailExpense
             // 
-            this.tsb_SearchExpense.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_SearchExpense.Image = ((System.Drawing.Image)(resources.GetObject("tsb_SearchExpense.Image")));
-            this.tsb_SearchExpense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsb_SearchExpense.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_SearchExpense.Name = "tsb_SearchExpense";
-            this.tsb_SearchExpense.Size = new System.Drawing.Size(84, 97);
-            this.tsb_SearchExpense.Text = "Search for an Expense";
+            this.tsb_EmailExpense.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_EmailExpense.Image = ((System.Drawing.Image)(resources.GetObject("tsb_EmailExpense.Image")));
+            this.tsb_EmailExpense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsb_EmailExpense.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_EmailExpense.Name = "tsb_EmailExpense";
+            this.tsb_EmailExpense.Size = new System.Drawing.Size(84, 97);
+            this.tsb_EmailExpense.Text = "Email Expense";
+            this.tsb_EmailExpense.Click += new System.EventHandler(this.tsb_EmailExpense_Click);
             // 
             // toolStripSeparator4
             // 
@@ -132,15 +133,17 @@
             this.tsb_GenerateReport.Name = "tsb_GenerateReport";
             this.tsb_GenerateReport.Size = new System.Drawing.Size(84, 97);
             this.tsb_GenerateReport.Text = "Generate Report";
+            this.tsb_GenerateReport.Click += new System.EventHandler(this.tsb_GenerateReport_Click);
             // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 257);
+            this.ClientSize = new System.Drawing.Size(505, 212);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMainMenu";
             this.Text = "MainMenu";
+            this.Load += new System.EventHandler(this.frmMainMenu_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -156,7 +159,7 @@
         private System.Windows.Forms.ToolStripButton tsb_EditExpense;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton tsb_SearchExpense;
+        private System.Windows.Forms.ToolStripButton tsb_EmailExpense;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsb_GenerateReport;
