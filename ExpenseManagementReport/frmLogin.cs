@@ -26,8 +26,8 @@ namespace ExpenseManagementReport
         {
             string username = "";
             string password = "";
-            txt_username.Text = username;
-            txt_password.Text = password;
+            txt_username.Text = username.Trim();
+            txt_password.Text = password.Trim();
             try
             {
                 if(!username.Equals(" ") && !password.Equals(" "))
@@ -59,8 +59,8 @@ namespace ExpenseManagementReport
         private void btn_submit_Click(object sender, EventArgs e)
         {
             EncryptPassword encrypt = new EncryptPassword();
-            SessionManagement.Username = txt_username.Text;
-            SessionManagement.Password = txt_password.Text;
+            SessionManagement.Username = txt_username.Text.Trim();
+            SessionManagement.Password = txt_password.Text.Trim();
 
             LoginDAL loginDAL = new LoginDAL();
             if(loginDAL.AuthenticateUser())

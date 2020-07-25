@@ -65,8 +65,5 @@ namespace DAL
             sqlCmd.Connection = CloseConnection();
             return dt;
         }
-
-
-
     }
 }

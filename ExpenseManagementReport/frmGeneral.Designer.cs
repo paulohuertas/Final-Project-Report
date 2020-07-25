@@ -107,9 +107,12 @@
             // 
             // cb_Category
             // 
+            this.cb_Category.BackColor = System.Drawing.Color.White;
+            this.cb_Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_Category.Font = new System.Drawing.Font("Georgia Pro Cond", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Category.FormattingEnabled = true;
             this.cb_Category.Items.AddRange(new object[] {
+            "",
             "Airfare",
             "Taxi",
             "Bus",

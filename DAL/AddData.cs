@@ -10,12 +10,13 @@ using System.Windows.Forms;
 using System.Drawing;
 using Model;
 using BAL;
+using System.Globalization;
 
 namespace DAL
 {
     public class AddData : DbConnection
     {
-        ExpenseReport expenseReport = new ExpenseReport();
+        //ExpenseReport expenseReport = new ExpenseReport();
 
         public int AddNEwExpense(ExpenseReport expense)
         {
@@ -48,7 +49,5 @@ namespace DAL
             }
         }
     }
-
-    
 }
 

@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DAL;
@@ -79,10 +80,9 @@ namespace ExpenseManagementReport
                 if (numRes > 0)
                 {
                     MessageBox.Show("Record added successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    clearFields();
-
                     dg_ExpenseData.Update();
                     dg_ExpenseData.Refresh();
+                    clearFields();
                     dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
 
                 }
@@ -102,7 +102,7 @@ namespace ExpenseManagementReport
                 txt_ExpenseName.Focus();
                 return isValid;
             }
-            else if (total <= 0)
+            else if (total <= 0 || (!double.TryParse(txt_TotalSpent.Text, out total)))
             {
                 MessageBox.Show("Please, review receipt total", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_TotalSpent.Focus();
@@ -115,7 +115,7 @@ namespace ExpenseManagementReport
                 cb_Category.Focus();
                 return isValid;
             }
-            else if (receiptRefNo < 0)
+            else if (receiptRefNo < 0 || !int.TryParse(txt_ReceiptRefNo.Text, out receiptRefNo))
             {
                 MessageBox.Show("Please, review receipt reference number", "Attention", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txt_ReceiptRefNo.Focus();
@@ -182,7 +182,7 @@ namespace ExpenseManagementReport
             try
             {
                 DataView dataView = new DataView(dt);
-                dataView.RowFilter = "Convert(ReceiptNo, 'System.String') LIKE '" + txt_SearchDelete.Text + "%'";
+                dataView.RowFilter = "Convert(ExpName, 'System.String') LIKE '%" + txt_SearchDelete.Text + "%'";
                 dg_ExpenseData.DataSource = dataView;
                 dg_ExpenseData.Update();
                 dg_ExpenseData.Refresh();
@@ -202,7 +202,6 @@ namespace ExpenseManagementReport
             {
                 try
                 {
-                    //ReportId, ExpName, ExpTotal, ExpCategory, ReceiptNo, ReceiptDate, Username
                     int index = e.RowIndex;
                     DataGridViewRow selectedRow = dg_ExpenseData.Rows[index];
                     txt_ExpenseName.Text = selectedRow.Cells[1].Value.ToString();
@@ -210,6 +209,7 @@ namespace ExpenseManagementReport
                     cb_Category.Text = selectedRow.Cells[3].Value.ToString();
                     txt_ReceiptRefNo.Text = selectedRow.Cells[4].Value.ToString();
                     dateTimePicker1.Value = Convert.ToDateTime(selectedRow.Cells[5].Value.ToString());
+                    
 
                     txt_ReceiptRefNo.Enabled = false;
 
@@ -219,7 +219,7 @@ namespace ExpenseManagementReport
                 catch (Exception ex)
                 {
 
-                    MessageBox.Show("Something went wrong", ex.Message);
+                    MessageBox.Show("A cell within the grid should be selected", ex.Message);
                 }
             }
         }

@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMainMenu));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.tsb_AddExpense = new System.Windows.Forms.ToolStripSplitButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.tsb_DeleteExpense = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -39,6 +38,9 @@
             this.tsb_EmailExpense = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.tsb_GenerateReport = new System.Windows.Forms.ToolStripButton();
+            this.tsb_AddExpense = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.tsb_Exit = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,23 +55,14 @@
             this.toolStripSeparator3,
             this.tsb_EmailExpense,
             this.toolStripSeparator4,
-            this.tsb_GenerateReport});
+            this.tsb_GenerateReport,
+            this.toolStripSeparator5,
+            this.tsb_Exit});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(505, 100);
+            this.toolStrip1.Size = new System.Drawing.Size(617, 100);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
-            // 
-            // tsb_AddExpense
-            // 
-            this.tsb_AddExpense.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsb_AddExpense.Image = ((System.Drawing.Image)(resources.GetObject("tsb_AddExpense.Image")));
-            this.tsb_AddExpense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsb_AddExpense.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsb_AddExpense.Name = "tsb_AddExpense";
-            this.tsb_AddExpense.Size = new System.Drawing.Size(96, 97);
-            this.tsb_AddExpense.Text = "Add New Expense";
-            this.tsb_AddExpense.ButtonClick += new System.EventHandler(this.tsb_AddExpense_ButtonClick);
             // 
             // toolStripSeparator1
             // 
@@ -135,11 +128,38 @@
             this.tsb_GenerateReport.Text = "Generate Report";
             this.tsb_GenerateReport.Click += new System.EventHandler(this.tsb_GenerateReport_Click);
             // 
+            // tsb_AddExpense
+            // 
+            this.tsb_AddExpense.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_AddExpense.Image = ((System.Drawing.Image)(resources.GetObject("tsb_AddExpense.Image")));
+            this.tsb_AddExpense.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsb_AddExpense.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_AddExpense.Name = "tsb_AddExpense";
+            this.tsb_AddExpense.Size = new System.Drawing.Size(84, 97);
+            this.tsb_AddExpense.Text = "Add New Expense";
+            this.tsb_AddExpense.Click += new System.EventHandler(this.tsb_AddExpense_ButtonClick);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 100);
+            // 
+            // tsb_Exit
+            // 
+            this.tsb_Exit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsb_Exit.Image = ((System.Drawing.Image)(resources.GetObject("tsb_Exit.Image")));
+            this.tsb_Exit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tsb_Exit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsb_Exit.Name = "tsb_Exit";
+            this.tsb_Exit.Size = new System.Drawing.Size(84, 97);
+            this.tsb_Exit.Text = "Exit";
+            this.tsb_Exit.Click += new System.EventHandler(this.tsb_Exit_Click);
+            // 
             // frmMainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 212);
+            this.ClientSize = new System.Drawing.Size(617, 212);
             this.Controls.Add(this.toolStrip1);
             this.Name = "frmMainMenu";
             this.Text = "MainMenu";
@@ -154,7 +174,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripSplitButton tsb_AddExpense;
         private System.Windows.Forms.ToolStripButton tsb_DeleteExpense;
         private System.Windows.Forms.ToolStripButton tsb_EditExpense;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -163,5 +182,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton tsb_GenerateReport;
+        private System.Windows.Forms.ToolStripButton tsb_AddExpense;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton tsb_Exit;
     }
 }

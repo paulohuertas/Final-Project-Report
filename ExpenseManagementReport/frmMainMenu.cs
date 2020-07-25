@@ -128,5 +128,10 @@ namespace ExpenseManagementReport
         {
             System.Diagnostics.Process.Start("OUTLOOK");
         }
+
+        private void tsb_Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
