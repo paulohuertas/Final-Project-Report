@@ -349,6 +349,7 @@
             this.Controls.Add(this.btn_Home);
             this.Controls.Add(this.txt_SearchDelete);
             this.Controls.Add(this.lbl_Search);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "frmGeneral";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

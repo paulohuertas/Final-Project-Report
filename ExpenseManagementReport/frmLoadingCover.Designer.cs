@@ -68,7 +68,7 @@
             this.timer_loading.Enabled = true;
             this.timer_loading.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // LoadingCover
+            // frmLoadingCover
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -76,7 +76,10 @@
             this.Controls.Add(this.prgbar_loading);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.picbox_cover);
-            this.Name = "LoadingCover";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmLoadingCover";
             this.Text = "LoadingCover";
             ((System.ComponentModel.ISupportInitialize)(this.picbox_cover)).EndInit();
             this.ResumeLayout(false);

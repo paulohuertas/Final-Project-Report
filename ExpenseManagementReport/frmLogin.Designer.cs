@@ -145,7 +145,10 @@
             this.Controls.Add(this.lbl_username);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbl_LoginTitle);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "frm_Login";
+            this.ShowIcon = false;
             this.Text = "Login Form";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

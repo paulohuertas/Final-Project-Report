@@ -26,9 +26,8 @@ namespace ExpenseManagementReport
         DeleteData delete = new DeleteData();
         EditData edit = new EditData();
         frmMainMenu frmMain = new frmMainMenu();
-       
 
-        double total = 0;
+        double total = 0f;
         int receiptRefNo = 0;
 
         public frmGeneral()
@@ -36,6 +35,7 @@ namespace ExpenseManagementReport
             InitializeComponent();
             dg_ExpenseData.Refresh();
             dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
+            dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
 
         }
 
@@ -70,7 +70,7 @@ namespace ExpenseManagementReport
                 byte[] img = (byte[])image.ConvertTo(pictureBox1.Image, Type.GetType("System.Byte[]"));
 
                 expense.ExpName = txt_ExpenseName.Text;
-                expense.ExpTotal = total;
+                expense.ExpTotal = Math.Round(total, 2);
                 expense.ExpCategory = cb_Category.Text;
                 expense.ReceiptNo = receiptRefNo;
                 expense.receiptDate = dateTimePicker1.Value;
@@ -84,7 +84,7 @@ namespace ExpenseManagementReport
                     dg_ExpenseData.Refresh();
                     clearFields();
                     dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
-
+                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
                 }
             }
         }
@@ -163,6 +163,7 @@ namespace ExpenseManagementReport
                         dg_ExpenseData.Refresh();
                         clearFields();
                         dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
+                        dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
                     }
                     else
                     {
@@ -181,7 +182,7 @@ namespace ExpenseManagementReport
         {
             try
             {
-                DataView dataView = new DataView(dt);
+                DataView dataView = new DataView();
                 dataView.RowFilter = "Convert(ExpName, 'System.String') LIKE '%" + txt_SearchDelete.Text + "%'";
                 dg_ExpenseData.DataSource = dataView;
                 dg_ExpenseData.Update();
@@ -194,6 +195,7 @@ namespace ExpenseManagementReport
 
                 MessageBox.Show("Error...", ex.Message);
             }
+            
         }
 
         private void dg_ExpenseData_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -215,6 +217,7 @@ namespace ExpenseManagementReport
 
                     txt_SearchDelete.Text = txt_ReceiptRefNo.Text;
 
+                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
                 }
                 catch (Exception ex)
                 {
@@ -250,6 +253,7 @@ namespace ExpenseManagementReport
                     dg_ExpenseData.Update();
                     dg_ExpenseData.Refresh();
                     dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
+                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
 
                     txt_ReceiptRefNo.Enabled = true;
 
@@ -264,6 +268,7 @@ namespace ExpenseManagementReport
             dg_ExpenseData.Update();
             dg_ExpenseData.Refresh();
             dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
+            dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
         }
 
         private void btn_Home_Click(object sender, EventArgs e)
