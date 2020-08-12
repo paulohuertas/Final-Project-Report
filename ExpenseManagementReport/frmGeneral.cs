@@ -18,8 +18,6 @@ namespace ExpenseManagementReport
 {
     public partial class frmGeneral : Form
     {
-        DataTable dt;
-        BindingSource bs;
         DataGridDAL fetchData = new DataGridDAL();
         ExpenseReport expense = new ExpenseReport();
         AddData add = new AddData();
@@ -35,7 +33,7 @@ namespace ExpenseManagementReport
             InitializeComponent();
             dg_ExpenseData.Refresh();
             dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
-            dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
+            dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "C2";
 
         }
 
@@ -51,12 +49,7 @@ namespace ExpenseManagementReport
 
         private void frmGeneral_Load(object sender, EventArgs e)
         {
-            /*DataTable dt = new DataTable();
-            dt = fetchData.FetchAllExpensesRecords(expense);
-            dg_ExpenseData.DataSource = dt;*/
-
             dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
-
         }
 
         private void btn_Send_Click(object sender, EventArgs e)
@@ -84,7 +77,7 @@ namespace ExpenseManagementReport
                     dg_ExpenseData.Refresh();
                     clearFields();
                     dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
-                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
+                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "C2";
                 }
             }
         }
@@ -163,7 +156,7 @@ namespace ExpenseManagementReport
                         dg_ExpenseData.Refresh();
                         clearFields();
                         dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
-                        dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
+                        dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "C2";
                     }
                     else
                     {
@@ -182,12 +175,9 @@ namespace ExpenseManagementReport
         {
             try
             {
-                DataView dataView = new DataView();
-                dataView.RowFilter = "Convert(ExpName, 'System.String') LIKE '%" + txt_SearchDelete.Text + "%'";
+                DataView dataView = new DataView(fetchData.FetchAllExpensesRecords(expense));
+                dataView.RowFilter = "Convert(ReceiptNo, 'System.String') LIKE '%" + txt_SearchDelete.Text + "%'";
                 dg_ExpenseData.DataSource = dataView;
-                dg_ExpenseData.Update();
-                dg_ExpenseData.Refresh();
-                dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
 
             }
             catch (Exception ex)
@@ -217,7 +207,7 @@ namespace ExpenseManagementReport
 
                     txt_SearchDelete.Text = txt_ReceiptRefNo.Text;
 
-                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
+                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "C2";
                 }
                 catch (Exception ex)
                 {
@@ -253,7 +243,7 @@ namespace ExpenseManagementReport
                     dg_ExpenseData.Update();
                     dg_ExpenseData.Refresh();
                     dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
-                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
+                    dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "C2";
 
                     txt_ReceiptRefNo.Enabled = true;
 
@@ -268,7 +258,7 @@ namespace ExpenseManagementReport
             dg_ExpenseData.Update();
             dg_ExpenseData.Refresh();
             dg_ExpenseData.DataSource = fetchData.FetchAllExpensesRecords(expense);
-            dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "N2";
+            dg_ExpenseData.Columns[2].DefaultCellStyle.Format = "C2";
         }
 
         private void btn_Home_Click(object sender, EventArgs e)
@@ -342,6 +332,6 @@ namespace ExpenseManagementReport
 
         private void txt_TotalSpent_TextChanged(object sender, EventArgs e)
         {
-        }   
+        }
     }
 }
